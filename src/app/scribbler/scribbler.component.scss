@@ -1,0 +1,45 @@
+.scribbler-container
+{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.files-container
+{
+    background-color: #E6E6E6;
+}
+
+.template-container
+{
+    display: grid;
+    grid-template-rows: 90% 10%;
+}
+
+.button-action-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.field-template-alert
+{
+    width: 70%;
+    border:1px solid gray;
+    padding: 10px;
+    border-radius: 28px;
+    height: 225px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+.template-definitions
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
