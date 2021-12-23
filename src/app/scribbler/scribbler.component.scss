@@ -8,7 +8,47 @@
 .files-container
 {
     background-color: #E6E6E6;
+    display: flex;
+    justify-content: center;
+
+    .drag-indicator {
+        
+    }
+
+    .documents-wrapper
+    {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+   
+    .drag-indicator h1 {
+        font-size: 30px;
+        text-align: center;
+        font-weight: 900;
+        width: 350px;
+    }
+
+    .drag-indicator  .upload-file-icon {
+        font-size: 120px;
+        color: #3D56B2;
+        width: 120px;
+        height: 120px;
+    }
+
+    .drag-indicator .file-icon-wrapper
+    {
+        text-align: center;
+    }
 }
+
+.container-empty
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .template-container
 {
@@ -35,6 +75,14 @@
     align-items: center;
     text-align: center;
     font-weight: bold;
+
+    .alert-icon
+    {
+        width: 100px;
+        height: 120px;
+        font-size: 120px;
+        color: #FF6363;
+    }
 }
 
 .template-definitions
