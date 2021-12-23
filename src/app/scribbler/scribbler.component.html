@@ -9,7 +9,7 @@
             <h1> Drag & Drop Your Documents Here </h1>
         </div>
         <div class="documents-wrapper">
-            <app-added-document *ngFor="let document of addedDocuments" [document]="document"></app-added-document>
+            <app-added-document class="document" *ngFor="let document of addedDocuments" [document]="document"></app-added-document>
         </div>
     </div>
     <div class="template-container">

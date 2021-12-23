@@ -1,7 +1,18 @@
-.document
+.scribber-document
 {
-    background-color: white;
-    min-width: 60%;
-    max-width: 80%;
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 20% 70% 10%;
+    height: 101px;
+}
+
+.scribber-document div
+{
+    height: 100%;
+}
+
+.scribber-document div:nth-child(odd)
+{
+    display: flex;
+    justify-self: center;
+    align-items: center;
 }

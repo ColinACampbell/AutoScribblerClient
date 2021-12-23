@@ -1,27 +1,31 @@
-.scribbler-container
-{
+.scribbler-container {
     height: 100%;
     display: grid;
     grid-template-columns: 50% 50%;
 }
 
-.files-container
-{
-    background-color: #E6E6E6;
+.files-container {
+    background-color: #e6e6e6;
     display: flex;
     justify-content: center;
+    overflow-y: scroll;
 
-    .drag-indicator {
-        
+    .document {
+        background-color: white;
+        min-width: 70%;
+        max-width: 80%;
+        margin-top: 20px;
+        border-radius: 20px;
     }
 
-    .documents-wrapper
-    {
+    .documents-wrapper {
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: center;
     }
-   
+
     .drag-indicator h1 {
         font-size: 30px;
         text-align: center;
@@ -29,44 +33,38 @@
         width: 350px;
     }
 
-    .drag-indicator  .upload-file-icon {
+    .drag-indicator .upload-file-icon {
         font-size: 120px;
-        color: #3D56B2;
+        color: #3d56b2;
         width: 120px;
         height: 120px;
     }
 
-    .drag-indicator .file-icon-wrapper
-    {
+    .drag-indicator .file-icon-wrapper {
         text-align: center;
     }
 }
 
-.container-empty
-{
+.container-empty {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
-.template-container
-{
+.template-container {
     display: grid;
     grid-template-rows: 90% 10%;
 }
 
-.button-action-container
-{
+.button-action-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.field-template-alert
-{
+.field-template-alert {
     width: 70%;
-    border:1px solid gray;
+    border: 1px solid gray;
     padding: 10px;
     border-radius: 28px;
     height: 225px;
@@ -76,17 +74,15 @@
     text-align: center;
     font-weight: bold;
 
-    .alert-icon
-    {
+    .alert-icon {
         width: 100px;
         height: 120px;
         font-size: 120px;
-        color: #FF6363;
+        color: #ff6363;
     }
 }
 
-.template-definitions
-{
+.template-definitions {
     display: flex;
     justify-content: center;
     align-items: center;
