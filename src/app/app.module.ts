@@ -16,6 +16,7 @@ import { ScribberAddDefinitionDialogComponent } from './scribbler/scribber-add-d
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MatInputModule } from '@angular/material/input';
     HttpClientModule,
     MatDialogModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule
   ],
   providers: [ScribblerService],
   bootstrap: [AppComponent]

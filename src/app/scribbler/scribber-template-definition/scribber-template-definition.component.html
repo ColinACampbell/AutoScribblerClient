@@ -5,4 +5,9 @@
             <mat-icon> add </mat-icon> Add New Definition
         </button>
     </div>
+    <div>
+        <p *ngFor="let templateDefinition of this.templateDefinitions">
+            {{templateDefinition.itemName}}
+        </p>
+    </div>
 </div>

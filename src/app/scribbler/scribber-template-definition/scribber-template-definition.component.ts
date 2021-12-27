@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import TemplateDefinition from 'src/app/models/TemplateDefinition.model';
+import { ScribblerService } from 'src/app/services/scribbler.service';
 import { ScribberAddDefinitionDialogComponent } from '../scribber-add-definition-dialog/scribber-add-definition-dialog.component';
 
 @Component({
@@ -9,16 +11,21 @@ import { ScribberAddDefinitionDialogComponent } from '../scribber-add-definition
 })
 export class ScribberTemplateDefinitionComponent implements OnInit {
 
-  constructor(private matDialog:MatDialog) { }
+
+  public templateDefinitions: TemplateDefinition[] = [];
+
+  constructor(private matDialog:MatDialog,private scribblerService: ScribblerService) { }
 
   ngOnInit(): void {
+    this.scribblerService.templateDefinitionsObservable.subscribe((templateDefinitions:TemplateDefinition[])=>{
+      this.templateDefinitions = templateDefinitions;
+    })
   }
-
 
   openAddDefinitionDialog()
   {
     this.matDialog.open(ScribberAddDefinitionDialogComponent,{
-      //width:"500px"
+      width:"400px"
     })
   }
 }
