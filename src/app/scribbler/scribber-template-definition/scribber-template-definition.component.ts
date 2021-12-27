@@ -14,18 +14,37 @@ export class ScribberTemplateDefinitionComponent implements OnInit {
 
   public templateDefinitions: TemplateDefinition[] = [];
 
-  constructor(private matDialog:MatDialog,private scribblerService: ScribblerService) { }
+  constructor(private matDialog: MatDialog, private scribblerService: ScribblerService) { }
 
   ngOnInit(): void {
-    this.scribblerService.templateDefinitionsObservable.subscribe((templateDefinitions:TemplateDefinition[])=>{
+    this.scribblerService.addTemplateDefinition({
+      itemName: "Test",
+      dataType: "Short Text",
+    })
+    this.scribblerService.addTemplateDefinition({
+      itemName: "Test",
+      dataType: "Short Text",
+    })
+    this.scribblerService.addTemplateDefinition({
+      itemName: "Test",
+      dataType: "Short Text",
+    })
+    this.scribblerService.addTemplateDefinition({
+      itemName: "Test",
+      dataType: "Short Text",
+    })
+    this.scribblerService.addTemplateDefinition({
+      itemName: "Test",
+      dataType: "Short Text",
+    })
+    this.scribblerService.templateDefinitionsObservable.subscribe((templateDefinitions: TemplateDefinition[]) => {
       this.templateDefinitions = templateDefinitions;
     })
   }
 
-  openAddDefinitionDialog()
-  {
-    this.matDialog.open(ScribberAddDefinitionDialogComponent,{
-      width:"400px"
+  openAddDefinitionDialog() {
+    this.matDialog.open(ScribberAddDefinitionDialogComponent, {
+      width: "400px"
     })
   }
 }

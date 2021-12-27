@@ -1,13 +1,26 @@
-<div>
+<div class="container">
     <div class="template-definition-heading">
         <p class="title"> Configure Template Definitions </p>
         <button mat-raised-button color="primary" (click)="openAddDefinitionDialog()">
             <mat-icon> add </mat-icon> Add New Definition
         </button>
     </div>
-    <div>
-        <p *ngFor="let templateDefinition of this.templateDefinitions">
-            {{templateDefinition.itemName}}
-        </p>
+    <div class="template-definitions-container">
+        <div class="template-definition-card" *ngFor="let templateDefinition of this.templateDefinitions">
+            <div class="template-definition-row">
+                <p> Template String:  </p>
+                <mat-form-field class="example-full-width" appearance="standard">
+                    <mat-label>Name of Item To Replace</mat-label>
+                    <input matInput [(ngModel)]="templateDefinition.itemName" placeholder="Ex. <FirstName>" disabled>
+                </mat-form-field>
+            </div>
+            <div class="template-definition-row">
+                <p> Replace With: ({{templateDefinition.dataType}})  </p>
+                <mat-form-field class="example-full-width" appearance="standard">
+                    <mat-label>Enter The Value</mat-label>
+                    <input matInput [(ngModel)]="templateDefinition.value" placeholder="Enter The Value">
+                </mat-form-field>
+            </div>
+        </div>
     </div>
 </div>

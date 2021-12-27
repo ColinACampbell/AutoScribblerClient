@@ -57,8 +57,6 @@
 }
 
 .template-container {
-    display: grid;
-    grid-template-rows: 90% 10%;
 }
 
 .button-action-container {
@@ -88,6 +86,10 @@
 }
 
 .template-definitions {
+    height: 85vh;
+}
+
+.button-action-container {
 }
 
 .template-definitions-empty {
