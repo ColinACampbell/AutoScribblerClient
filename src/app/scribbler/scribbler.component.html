@@ -1,5 +1,5 @@
 <div class="scribbler-container">
-    <div class="files-container drop-zone" [ngClass]="{
+    <div class="files-container" [ngClass]="{
         'container-empty' : this.addedDocuments.length === 0
     }" appDnd (fileDrop)="handleFileDrop($event)">
         <div class="drag-indicator" *ngIf="this.addedDocuments.length === 0">
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="button-action-container">
-            <button mat-raised-button color="primary">Process Documents</button>
+            <button mat-raised-button color="primary" (click)="submitDocuments()">Process Documents</button>
         </div>
     </div>
 </div>

@@ -9,6 +9,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { DndDirective } from './directives/dnd.directive';
 import { AddedDocumentComponent } from './scribbler/added-document/added-document.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ScribblerService } from './services/scribbler.service';
+
 
 @NgModule({
   declarations: [
@@ -22,9 +25,10 @@ import { AddedDocumentComponent } from './scribbler/added-document/added-documen
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ScribblerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
