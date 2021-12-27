@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ScribberAddDefinitionDialogComponent } from '../scribber-add-definition-dialog/scribber-add-definition-dialog.component';
 
 @Component({
   selector: 'app-scribber-template-definition',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScribberTemplateDefinitionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private matDialog:MatDialog) { }
 
   ngOnInit(): void {
   }
 
+
+  openAddDefinitionDialog()
+  {
+    this.matDialog.open(ScribberAddDefinitionDialogComponent,{
+      //width:"500px"
+    })
+  }
 }

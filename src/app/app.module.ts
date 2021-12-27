@@ -11,14 +11,20 @@ import { DndDirective } from './directives/dnd.directive';
 import { AddedDocumentComponent } from './scribbler/added-document/added-document.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ScribblerService } from './services/scribbler.service';
-
+import { ScribberTemplateDefinitionComponent } from './scribbler/scribber-template-definition/scribber-template-definition.component';
+import { ScribberAddDefinitionDialogComponent } from './scribbler/scribber-add-definition-dialog/scribber-add-definition-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
     AppComponent,
     ScribblerComponent,
     DndDirective,
-    AddedDocumentComponent
+    AddedDocumentComponent,
+    ScribberTemplateDefinitionComponent,
+    ScribberAddDefinitionDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +32,10 @@ import { ScribblerService } from './services/scribbler.service';
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    MatSelectModule,
+    MatInputModule
   ],
   providers: [ScribblerService],
   bootstrap: [AppComponent]
