@@ -9,17 +9,22 @@
             <h1> Drag & Drop Your Documents Here </h1>
         </div>
         <div class="documents-wrapper">
-            <app-added-document class="document" *ngFor="let document of addedDocuments" [document]="document" [index]="addedDocuments.indexOf(document)" (onRemoveItem)="handleRemoveItem($event)"></app-added-document>
+            <app-added-document class="document" *ngFor="let document of addedDocuments" [document]="document"
+                [index]="addedDocuments.indexOf(document)" (onRemoveItem)="handleRemoveItem($event)">
+            </app-added-document>
         </div>
     </div>
     <div class="template-container">
-        <div class="template-definitions">
-            <div class="field-template-alert">
+        <div class="template-definitions" [ngClass]="{
+            'template-definitions-empty' : this.addedDocuments.length === 0
+        }">
+            <div class="field-template-alert" *ngIf="this.addedDocuments.length === 0">
                 <h1> You need to add documents before you can load field templates</h1>
                 <div class="alert-icon-wrapper">
                     <mat-icon aria-hidden="false" aria-label="Upload Icon" class="alert-icon">priority_high</mat-icon>
                 </div>
             </div>
+            <app-scribber-template-definition *ngIf="this.addedDocuments.length > 0"></app-scribber-template-definition>
         </div>
         <div class="button-action-container">
             <button mat-raised-button color="primary" (click)="submitDocuments()">Process Documents</button>

@@ -23,8 +23,7 @@
         align-items: center;
     }
 
-    .drag-indicator
-    {
+    .drag-indicator {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -89,6 +88,9 @@
 }
 
 .template-definitions {
+}
+
+.template-definitions-empty {
     display: flex;
     justify-content: center;
     align-items: center;
