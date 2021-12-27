@@ -15,8 +15,8 @@ export class ScribblerComponent implements OnInit {
   constructor(private scribblerService: ScribblerService) { }
 
   ngOnInit(): void {
-    const file = new File([], "test")
-    //this.addedDocuments.push(file);
+    const file = new File([], "My Document file.docx")
+    this.addedDocuments.push(file);
   }
 
   handleFileDrop($event: any) {
