@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-added-document',
@@ -10,9 +10,21 @@ export class AddedDocumentComponent implements OnInit {
   @Input()
   public document?:File;
 
+  @Input()
+  public index?:number;
+
+  @Output()
+  public onRemoveItem = new EventEmitter<number>()
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
+  removeItem()
+  {
+    console.log("Clicked "+this.index)
+    this.onRemoveItem.emit(this.index)
+  }
 }

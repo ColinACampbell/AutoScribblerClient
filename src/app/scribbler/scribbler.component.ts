@@ -19,6 +19,22 @@ export class ScribblerComponent implements OnInit {
     this.addedDocuments.push(file);
   }
 
+  handleRemoveItem($event:any)
+  {
+    console.log($event)
+    const index = $event as number;
+    const tempDocs : File[] = [];
+    for (let i = 0; i < this.addedDocuments.length; i ++)
+    {
+      if (i === index)
+        continue;
+      tempDocs.push(this.addedDocuments[i]);
+    }
+
+    this.addedDocuments = [...tempDocs];
+  }
+
+
   handleFileDrop($event: any) {
     const files = $event as File[];
 
