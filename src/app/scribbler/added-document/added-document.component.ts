@@ -24,7 +24,6 @@ export class AddedDocumentComponent implements OnInit {
 
   removeItem()
   {
-    console.log("Clicked "+this.index)
     this.onRemoveItem.emit(this.index)
   }
 }

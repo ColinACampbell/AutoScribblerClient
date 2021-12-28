@@ -17,6 +17,7 @@ export class ScribberTemplateDefinitionComponent implements OnInit {
   constructor(private matDialog: MatDialog, private scribblerService: ScribblerService) { }
 
   ngOnInit(): void {
+    /** 
     this.scribblerService.addTemplateDefinition({
       itemName: "Test",
       dataType: "Short Text",
@@ -36,7 +37,7 @@ export class ScribberTemplateDefinitionComponent implements OnInit {
     this.scribblerService.addTemplateDefinition({
       itemName: "Test",
       dataType: "Short Text",
-    })
+    })**/
     this.scribblerService.templateDefinitionsObservable.subscribe((templateDefinitions: TemplateDefinition[]) => {
       this.templateDefinitions = templateDefinitions;
     })

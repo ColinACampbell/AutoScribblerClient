@@ -15,13 +15,12 @@ export class ScribblerComponent implements OnInit {
   constructor(private scribblerService: ScribblerService) { }
 
   ngOnInit(): void {
-    const file = new File([], "My Document file.docx")
-    this.addedDocuments.push(file);
+    //const file = new File([], "My Document file.docx")
+    //this.addedDocuments.push(file);
   }
 
   handleRemoveItem($event:any)
   {
-    console.log($event)
     const index = $event as number;
     const tempDocs : File[] = [];
     for (let i = 0; i < this.addedDocuments.length; i ++)
@@ -55,9 +54,10 @@ export class ScribblerComponent implements OnInit {
   }
 
   async submitDocuments() {
-    const observable = await this.scribblerService.submitDocuments(this.addedDocuments);
+    const templateDefinitions =  this.scribblerService.templateDefinitions.value
+
+    const observable = await this.scribblerService.submitDocuments(this.addedDocuments,templateDefinitions);
     observable.subscribe((response: HttpResponse<Blob>) => {
-      console.log(response.status)
       let filename: string = this.getFileName(response as HttpResponse<Blob>)
       let binaryData = [];
       binaryData.push(response.body);

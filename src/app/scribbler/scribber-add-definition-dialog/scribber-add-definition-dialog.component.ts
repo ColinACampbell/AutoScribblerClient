@@ -49,7 +49,6 @@ export class ScribberAddDefinitionDialogComponent implements OnInit {
 
   addItem()
   {
-    console.log(this.itemName,this.selectedInfoType)
     const templateDefinition : TemplateDefinition = {
       dataType : this.selectedInfoType,
       itemName:this.itemName as string

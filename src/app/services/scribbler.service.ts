@@ -8,7 +8,7 @@ import TemplateDefinition from '../models/TemplateDefinition.model';
 })
 export class ScribblerService {
 
-  private templateDefinitions = new BehaviorSubject<TemplateDefinition[]>([])
+  public templateDefinitions = new BehaviorSubject<TemplateDefinition[]>([])
   public templateDefinitionsObservable = this.templateDefinitions.asObservable();
 
   constructor(private httpClient: HttpClient) { }
@@ -19,7 +19,7 @@ export class ScribblerService {
     this.templateDefinitions.next(this.templateDefinitions.value);
   }
 
-  public async submitDocuments(files: File[]): Promise<Observable<HttpResponse<Blob>>> {
+  public async submitDocuments(files: File[],templateDefinitions:TemplateDefinition[]): Promise<Observable<HttpResponse<Blob>>> {
     const dataArray: string[] = [];
 
     for (let i = 0; i < files.length; i++) {
@@ -27,9 +27,9 @@ export class ScribblerService {
       dataArray.push(base64);
     }
 
-    await console.log(dataArray);
     return this.httpClient.post<Blob>('http://localhost:3000/api/scribbler/', {
-      files: dataArray
+      files: dataArray,
+      templateDefinitions
     }, {
       observe: "response",
       responseType:"blob" as 'json'
