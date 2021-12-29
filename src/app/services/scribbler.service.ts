@@ -21,6 +21,13 @@ export class ScribblerService {
 
   public async submitDocuments(files: File[],templateDefinitions:TemplateDefinition[]): Promise<Observable<HttpResponse<Blob>>> {
     const dataArray: string[] = [];
+    const fileNames: string[] = [];
+
+    files.forEach((file)=>{
+      fileNames.push(file.name);
+    })
+
+    console.log(fileNames);
 
     for (let i = 0; i < files.length; i++) {
       const base64 = await this.getBase64(files[i]) as string;
@@ -29,7 +36,8 @@ export class ScribblerService {
 
     return this.httpClient.post<Blob>('http://localhost:3000/api/scribbler/', {
       files: dataArray,
-      templateDefinitions
+      templateDefinitions,
+      fileNames
     }, {
       observe: "response",
       responseType:"blob" as 'json'
