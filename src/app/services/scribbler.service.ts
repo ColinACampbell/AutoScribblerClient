@@ -1,6 +1,7 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import AppEnvironement from '../models/Environment.model';
 import TemplateDefinition from '../models/TemplateDefinition.model';
 
 @Injectable({
@@ -34,7 +35,7 @@ export class ScribblerService {
       dataArray.push(base64);
     }
 
-    return this.httpClient.post<Blob>('http://localhost:3000/api/scribbler/', {
+    return this.httpClient.post<Blob>(AppEnvironement.URL+'/api/scribbler/', {
       files: dataArray,
       templateDefinitions,
       fileNames
