@@ -1,11 +1,11 @@
 <h2> Add New Definition</h2>
-<div>
+<form [formGroup]="templateDefinitionForm">
 
     <div>
         <h4> Select the Information Type</h4>
         <mat-form-field appearance="fill">
-            <mat-label>Select The Information Type</mat-label>
-            <mat-select (selectionChange)="handleTypeSelectionChange($event)">
+            <mat-label>Select Data Type</mat-label>
+            <mat-select (selectionChange)="handleTypeSelectionChange($event)" formControlName="itemDataType">
                 <mat-option *ngFor="let option of this.infoTypes" [value]="option.name">
                     {{option.name}}
                 </mat-option>
@@ -15,12 +15,12 @@
 
     <div>
         <h4> Select The Item To Replace</h4>
-        <mat-form-field class="example-full-width" appearance="fill" >
+        <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Name of Item To Replace</mat-label>
-            <input matInput [(ngModel)]="itemName" placeholder="Ex. <FirstName>">
+            <input matInput [(ngModel)]="itemName" placeholder="Ex. <FirstName>" formControlName="itemName">
         </mat-form-field>
     </div>
     <div>
         <button mat-raised-button color="primary" (click)="addItem()"> Add </button>
     </div>
-</div>
+</form>

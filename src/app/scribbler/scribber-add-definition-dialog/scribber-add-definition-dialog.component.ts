@@ -3,6 +3,8 @@ import { MatDialogRef } from '@angular/material/dialog';
 import TemplateDefinition from 'src/app/models/TemplateDefinition.model';
 import { ScribblerService } from 'src/app/services/scribbler.service';
 import { ScribblerComponent } from '../scribbler.component';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
 
 interface InfoType {
   name: string,
@@ -32,6 +34,8 @@ export class ScribberAddDefinitionDialogComponent implements OnInit {
   public LONG_TEXT: InfoTypeEnum = InfoTypeEnum.LONG_TEXT;
   public NUMBER: InfoTypeEnum = InfoTypeEnum.NUMBER
 
+  templateDefinitionForm : FormGroup = new FormGroup({});
+
   constructor(private scribblerService: ScribblerService,private dialogRef:MatDialogRef<ScribblerComponent>) { }
 
   ngOnInit(): void {
@@ -40,6 +44,12 @@ export class ScribberAddDefinitionDialogComponent implements OnInit {
       { name: "Short Text", description: "Description", value: InfoTypeEnum.SHORT_TEXT },
       { name: "Long Text", description: "Description", value: InfoTypeEnum.LONG_TEXT }
     ]
+
+    this.templateDefinitionForm = new FormGroup({
+      itemDataType: new FormControl('', [Validators.required]),
+      itemName: new FormControl('',[Validators.required])
+    })
+    
   }
 
   handleTypeSelectionChange($event: any) {
