@@ -27,7 +27,7 @@
             <app-scribber-template-definition *ngIf="this.addedDocuments.length > 0"></app-scribber-template-definition>
         </div>
         <div class="button-action-container">
-            <button mat-raised-button color="primary" (click)="submitDocuments()">Process Documents</button>
+            <button mat-raised-button color="primary" (click)="submitDocuments()" [disabled]="this.addedDocuments.length == 0">Process Documents</button>
         </div>
     </div>
 </div>

@@ -48,7 +48,7 @@ export class ScribblerComponent implements OnInit {
       filename = r.exec(contentDisposition as string)![1];
     }
     catch (e) {
-      filename = 'myfile.zip'
+      filename = `AutoScribbler-${new Date().getTime()}.zip`
     }
     return filename
   }

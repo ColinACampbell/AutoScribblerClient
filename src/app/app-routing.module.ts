@@ -7,7 +7,7 @@ const routes: Routes = [{
   path: "" , component : AppComponent
 },
 {
-  path: "app", component : ScribblerComponent
+  path: "app", component : ScribblerComponent, 
 }];
 
 @NgModule({
