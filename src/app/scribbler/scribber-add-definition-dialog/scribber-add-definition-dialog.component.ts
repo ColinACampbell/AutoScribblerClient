@@ -63,7 +63,11 @@ export class ScribberAddDefinitionDialogComponent implements OnInit {
       dataType : this.selectedInfoType,
       itemName:this.itemName as string
     }
-    this.scribblerService.addTemplateDefinition(templateDefinition);
-    this.dialogRef.close()
+
+    if (this.templateDefinitionForm.valid)
+    {
+      this.scribblerService.addTemplateDefinition(templateDefinition);
+      this.dialogRef.close()
+    }
   }
 }
